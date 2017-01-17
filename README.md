@@ -3,6 +3,8 @@ wikimindmap
 
 Search wikipedia and show result as freemind.
 
+![](screenshot.png)
+
 # run env
 - Chrome 50
 - Flash player 23
