@@ -17,13 +17,16 @@
 
 */
 
-	header('Content-Disposition: attachment; filename=map.mm');
+	//header('Content-Disposition: attachment; filename=map.mm');
 #	header('Content-Length: '.strlen($mindmap_entry->mindmap));
 	header('Connection: close');
-	header('Content-Type: text/x-troff-mm; name=map.mm');
+	header('Content-Type: text/x-troff-mm; charset=utf-8');
 	header('Cache-Control: store, cache');
 	header('Pragma: cache');
 
+	#for convert zh-TW to zh-cn
+	define("MEDIAWIKI_PATH", "/var/www/html/mediawiki-1.26.2");
+	require_once "mediawiki-zhconverter.inc.php";
 
 	$time_start = microtime(true);
 	$wiki = $_GET['Wiki'];
@@ -31,6 +34,12 @@
 	//echo $topic;
 	$topic = urldecode($topic);
 	$topic = str_replace(" ", "_", $topic);
+	if ($topic == "")
+	{
+		$topic="index";
+	}
+
+	header('Content-Disposition: attachment; filename='.$topic.'.mm');
 
 	//Wiki specific Variables
 	$index_path = "";
@@ -84,14 +93,37 @@
 	// set user agent
 	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 	// set the rest of your cURL options here
-	$contents = curl_exec($ch);
-	curl_close($ch);
+
+	$debug = true;
+	if ($debug)
+	{//get test data from local
+		$file = "animal.txt";
+	  $contents = file_get_contents($file);
+	}
+	else
+	{//get data from wikipedia
+		$contents = curl_exec($ch);
+		curl_close($ch);
+	}
 
 	// Decode from UTF-8
-	$contents = utf8_decode($contents);
+	//$contents = utf8_decode($contents);
 
 	$contents = removeComments($contents);
 	$contents = removeClassInfo($contents);
+
+	//convert zh-TW to zh-cn
+	$contents = MediaWikiZhConverter::convert($contents,"zh-cn","gbk");
+
+	//remove none-printable unicode charactor
+	/*
+	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
+	*/
+	$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
+
+	//check encoding
+	//echo mb_detect_encoding($contents);
+	//echo $contents;
 
 	//-------------------------------------------------------------------------------------------
 	//Parse the Topicfile to find WikiLinks
@@ -100,6 +132,7 @@
 	$i=0;
 	$link[0][0] = "";
 
+	echo chr(0xef).chr(0xbb).chr(0xbf);
 	echo "<map version=\"0.8.0\">\n";
 #echo'<edge STYLE="bezier"/>\n';
 	$wikilink  = 'http://'.$wiki.'/wiki/'.$topic;
@@ -335,9 +368,9 @@
 		$clean = strtr ($clean, $transW );
 
 		$convmap = array(0x80, 0xff, 0, 0xff);
- 		$clean = mb_encode_numericentity($clean, $convmap, "ISO-8859-1");
-
-		return $clean;
+ 		//$clean = mb_encode_numericentity($clean, $convmap, "ISO-8859-1");
+		$clean = mb_encode_numericentity($clean, $convmap, "UTF-8");
+		return htmlentities($clean);
 	}
 
     function cleanWikiLink($text) {
@@ -441,5 +474,3 @@
 		return $text;
 	}
 ?>
-
-
