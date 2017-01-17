@@ -304,7 +304,7 @@
 						$link[0][$i] = $tag;
 					}
 					$wikilink    = 'http://'.$wiki.$access_path.'/'.$link[1][$i];
-					$mmlink	 = 'index.php?wiki='.$wiki.'&topic='.$link[1][$i];
+					$mmlink	 = 'viewmap.php?wiki='.$wiki.'&topic='.$link[1][$i];
 
 					echo "<node TEXT=\"".cleanText($link[0][$i])."\" WIKILINK=\"".cleanWikiLink($wikilink)."\" MMLINK=\"".$mmlink."\" STYLE=\"fork\">\n";
 					//echo '<node TEXT="T"  STYLE="fork">/n';

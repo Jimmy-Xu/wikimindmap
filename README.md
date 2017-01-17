@@ -26,7 +26,7 @@ $ hyper fip attach $ip mywikimindmap
 
 
 //open in chrome
-http://<ip>/public/viewmap.php
+http://<ip>
 ```
 
 # convert 繁体中文到简体中文
