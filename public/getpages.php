@@ -1,5 +1,9 @@
-
 <?php
+	header('Content-Type:text/text; charset=utf-8');
+
+	#for convert zh-TW to zh-cn
+	define("MEDIAWIKI_PATH", "/var/www/html/mediawiki-1.26.2");
+	require_once "mediawiki-zhconverter.inc.php";
 /*
 	Copyright (C) 2010  Felix Nyffenegger
 
@@ -17,11 +21,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-	header("Content-Type: text/plain; charset=UTF-8");
-
-	define("MEDIAWIKI_PATH", '/var/www/html/mediawiki-1.26.2/');
-	require_once "/var/www/html/public/mediawiki-zhconverter.inc.php";
-
 	//-------------------------------------------------------------------------------------------
 	// Handle Get Paramters
 	//-------------------------------------------------------------------------------------------
@@ -44,7 +43,7 @@
 			break;
 		case "zh.wikipedia.org":
 			$index_path = "/w";
-			$access_path = "zh-cn";
+			$access_path = "/zh-cn";
 			break;
 		default:
 			$index_path = "/w";
@@ -53,6 +52,7 @@
 	}
 
 	$url = 'http://'.$wiki.$index_path.'/index.php?title='.$topic.'&action=raw';
+	//echo $url;
 	//-------------------------------------------------------------------------------------------
 	// Defaults for the Parser
 	//-------------------------------------------------------------------------------------------
@@ -87,21 +87,36 @@
 	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	$contents = curl_exec($ch);
-	curl_close($ch);
+
+	$debug = false
+	if $debug
+	{//get test data from local
+		$file = "animal.txt";
+	  $contents = file_get_contents($file);
+	}
+	else
+	{//get data from wikipedia
+		$contents = curl_exec($ch);
+		curl_close($ch);
+	}
 
 	// Decode from UTF-8
 	//$contents = utf8_decode($contents);
 
+	//convert zh-TW to zh-cn
+	$contents = MediaWikiZhConverter::convert($contents,"zh-cn","utf-8");
+
+	//remove none-printable unicode charactor
+	/*
+	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
+	*/
+	$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
+
+	//check encoding
+	//echo mb_detect_encoding($contents);
+
 	$contents = removeComments($contents);
 	$contents = removeClassInfo($contents);
-
-	//convert zh-TW to zh-cn
-	$contents = MediaWikiZhConverter::convert($contents, "zh-cn");
-
-	//convert non-printing unicode characters
-	//$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
-	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
 
 	//echo "Content:" . $contents;
 
@@ -111,15 +126,17 @@
 
 	$i=0;
 	$link[0][0] = "";
-
+	//echo chr(239).chr(187).chr(191);
 	echo chr(0xef).chr(0xbb).chr(0xbf);
+	echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 	echo "<map version=\"0.8.0\">\n";
 	echo "<edge STYLE=\"bezier\"/>\n";
 	$wikilink  = 'http://'.$wiki.'/wiki/'.urlencode($topic);
-	$ttorg = substr($contents,0,500);
+	$ttorg = mb_substr($contents,0,500);
 	//echo 'TTROG: '.$ttorg;
 	$tooltip = createToolTipText($ttorg, 300);
 	//echo 'TT: '.$tooltip;
+	//echo $topic;
 	echo "<node STYLE=\"bubble\" TEXT=\"".$topic."\" WIKILINK = \"".$wikilink."\" TOOLTIPTEXT = \"".$tooltip."\">\n";
 	//echo '<node STYLE="bubble" TEXT="Main">/n';
 	echo "<edge STYLE=\"sharp_bezier\" WIDTH=\"2\"/>\n";
@@ -150,8 +167,8 @@
 		{
 
 			$contents = strstr($contents, $chapStart);
-			$contents = substr($contents, strlen($chapStart));
-			$Chap = substr($contents,0, strpos($contents,$chapEnd));
+			$contents = mb_substr($contents, strlen($chapStart));
+			$Chap = mb_substr($contents,0, strpos($contents,$chapEnd));
 
 			//echo $Chap.'<br>';
 			if ($Chap !="")
@@ -176,7 +193,7 @@
 				// Create Topic
 				$wChap = str_replace(" ","_", $Chap);
 				$wChap = trim($wChap, "_");
-				$ttorg = substr($contents,strpos($contents,$chapEnd)+2, 500);
+				$ttorg = mb_substr($contents,strpos($contents,$chapEnd)+2, 500);
 				$tooltip = createToolTipText($ttorg, 150);
 
 				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.$wChap;
@@ -188,7 +205,7 @@
 			}
 
 			$contents = strstr($contents,$chapEnd);
-			$contents = substr($contents, strlen($chapEnd));
+			$contents = mb_substr($contents, strlen($chapEnd));
 
 		}
 
@@ -199,8 +216,8 @@
 		{
 			//echo "SUbCHap";
 			$contents = strstr($contents, $subChapStart);
-			$contents = substr($contents, strlen($subChapStart));
-			$SubChap = substr($contents,0, strpos($contents,$subChapEnd));
+			$contents = mb_substr($contents, strlen($subChapStart));
+			$SubChap = mb_substr($contents,0, strpos($contents,$subChapEnd));
 
 			//echo $Chap.'<br>';
 			if ($SubChap !="")
@@ -219,7 +236,7 @@
 				// Create Topic
 				$wSubChap = str_replace(" ","_", $SubChap);
 				$wSubChap = trim($wSubChap, "_");
-				$ttorg = substr($contents,strpos($contents,$subChapEnd)+3, 500);
+				$ttorg = mb_substr($contents,strpos($contents,$subChapEnd)+3, 500);
 				//$tooltip = createToolTipText($ttorg, 150);
 
 				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.$wSubChap;
@@ -230,7 +247,7 @@
 			}
 
 			$contents = strstr($contents,$subChapEnd);
-			$contents = substr($contents, strlen($subChapEnd));
+			$contents = mb_substr($contents, strlen($subChapEnd));
 		}
 
 
@@ -241,8 +258,8 @@
 		{
 
 			$contents = strstr($contents, $wwwLinkStart);
-			$contents = substr($contents, strlen($wwwLinkStart));
-			$wwwLink  = substr($contents,0, strpos($contents,$wwwLinkEnd));
+			$contents = mb_substr($contents, strlen($wwwLinkStart));
+			$wwwLink  = mb_substr($contents,0, strpos($contents,$wwwLinkEnd));
 			if ($wwwLink !="")
 			{
 				$wwwLinkURL = 'http:'.substr($wwwLink, 0, strpos($wwwLink, " "));
@@ -346,6 +363,7 @@
 	//-------------------------------------------------------------------------------------------
 
 	function createToolTipText($text, $len) {
+		return "";
 		global $chapStart;
 		//echo '<br> TTTEXT: '.$text;
 		$tttext = removeTags($text);
@@ -354,9 +372,9 @@
 		if (strpos($text, $chapStart) >-1) {
 			$i = min(strpos($text, $chapStart), $len);
 		}
-		$tttext = substr($tttext, 0, $i);
+		$tttext = mb_substr($tttext, 0, $i);
 		$tttext = cleanText($tttext);
-		$tttext = trim($tttext);
+		//$tttext = trim($tttext);
 		//echo '<br> TTTEXT: '.$tttext;
 		//echo $tttext;
 		return $tttext.' [...]';
