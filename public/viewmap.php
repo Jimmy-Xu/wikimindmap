@@ -47,6 +47,7 @@ if (isset($_GET["topic"])) {
             <p align="center">
                 Select a Wiki:
                 <select name="wiki">
+                    <option <?php echo ($wiki == "zh.wikipedia.org" ? "selected" : ""); ?> >zh.wikipedia.org</option>
                     <option <?php echo ($wiki == "ca.wikipedia.org" ? "selected" : ""); ?> >ca.wikipedia.org</option>
                     <option <?php echo ($wiki == "de.wikipedia.org" ? "selected" : ""); ?> >de.wikipedia.org</option>
                     <option <?php echo ($wiki == "en.wikipedia.org" ? "selected" : ""); ?> >en.wikipedia.org</option>

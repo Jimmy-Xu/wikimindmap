@@ -17,6 +17,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+	header("Content-Type: text/plain; charset=UTF-8");
+
+	define("MEDIAWIKI_PATH", '/var/www/html/mediawiki-1.26.2/');
+	require_once "/var/www/html/public/mediawiki-zhconverter.inc.php";
+
 	//-------------------------------------------------------------------------------------------
 	// Handle Get Paramters
 	//-------------------------------------------------------------------------------------------
@@ -36,6 +41,10 @@
 		case "www.self-qs.de":
 			$index_path = "";
 			$access_path = "/m3WDB";
+			break;
+		case "zh.wikipedia.org":
+			$index_path = "/w";
+			$access_path = "zh-cn";
 			break;
 		default:
 			$index_path = "/w";
@@ -76,16 +85,23 @@
 	curl_setopt ($ch, CURLOPT_URL, $url);
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	curl_setopt($ch, CURLOPT_USERAGENT, $useragent); 
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 	$contents = curl_exec($ch);
 	curl_close($ch);
-	
+
 	// Decode from UTF-8
-	$contents = utf8_decode($contents);
+	//$contents = utf8_decode($contents);
 
 	$contents = removeComments($contents);
 	$contents = removeClassInfo($contents);
+
+	//convert zh-TW to zh-cn
+	$contents = MediaWikiZhConverter::convert($contents, "zh-cn");
+
+	//convert non-printing unicode characters
+	//$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
+	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
 
 	//echo "Content:" . $contents;
 
@@ -96,9 +112,10 @@
 	$i=0;
 	$link[0][0] = "";
 
+	echo chr(0xef).chr(0xbb).chr(0xbf);
 	echo "<map version=\"0.8.0\">\n";
 	echo "<edge STYLE=\"bezier\"/>\n";
-	$wikilink  = 'http://'.$wiki.'/wiki/'.$topic;
+	$wikilink  = 'http://'.$wiki.'/wiki/'.urlencode($topic);
 	$ttorg = substr($contents,0,500);
 	//echo 'TTROG: '.$ttorg;
 	$tooltip = createToolTipText($ttorg, 300);
@@ -418,5 +435,3 @@
 		return $text;
 	}
 ?>
-
-
