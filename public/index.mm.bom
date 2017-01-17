@@ -1,13 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿
+<?xml version="1.0" encoding="gbk"?>
 <map version="0.8.0">
 <edge STYLE="bezier"/>
-<node STYLE="bubble" TEXT="动物" WIKILINK = "http://zh.wikipedia.org/wiki/%E5%8A%A8%E7%89%A9" TOOLTIPTEXT = "">
+<node STYLE="bubble" TEXT="动物" WIKILINK = "http://zh.wikipedia.org/wiki/%E5%8A%A8%E7%89%A9" TOOLTIPTEXT = "动物是多细胞真核生命体中的一大类群，统称为动物界。动物身体的基本形态会随着其发育而变得固定，通常是在其胚胎发育时，但也有些动物会在其生命中有变态的过程。大多数动物能自发且独立地移动探索，只有极少数的动物（如珊瑚）是固定在一点无法移动。动物行为学是研究动物行为的科学，较著名的行为理论为康纳德·洛伦茨提出的本能理论。大多数动物是依赖其他生命体作为其营养来源的消费者(生物)，只有极少数是以死亡的生命体（有机体）作为营养来源（例如蚯蚓）的清除者。已发现的动物化石，多是在五亿四千万年前的寒武纪大爆发时的海洋物种。 特征 动物有几种将其与其他生物相区隔的特征。动物是真核生物 [...]">
 <edge STYLE="sharp_bezier" WIDTH="2"/>
 <node TEXT="多细胞生物 / 多细胞" WIKILINK="http://zh.wikipedia.org/zh-cn/多细胞生物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=多细胞生物" STYLE="fork">
 </node>
-<node TEXT=" 特征 
-动" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#特征_
-动" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 特征 动物" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#特征_动物" TOOLTIPTEXT = "种将其与其他生物相区隔的特征。动物是真核生物，且通常是多细胞的 （例外请见黏体动物），这将其与细菌和大多数的原生生物相区隔。动物是消费者，通常在一个内腔中消化食物，这将其与植物和藻类相区隔。动物也因缺乏细胞壁而和植物、藻类和真菌不同。所有的动物都是能动的，若只算一部分的生长期间。胚胎会有形成囊胚的时 [...]" STYLE="bubble">
 <node TEXT="真核生物" WIKILINK="http://zh.wikipedia.org/zh-cn/真核生物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=真核生物" STYLE="fork">
 </node>
 <node TEXT="多细胞生物 / 多细胞" WIKILINK="http://zh.wikipedia.org/zh-cn/多细胞生物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=多细胞生物" STYLE="fork">
@@ -30,9 +29,7 @@
 </node>
 <node TEXT="囊胚" WIKILINK="http://zh.wikipedia.org/zh-cn/囊胚" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=囊胚" STYLE="fork">
 </node>
-<node TEXT=" 结构 
-" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#结构_
-" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 结构 除" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#结构_除" TOOLTIPTEXT = "种将其与其他生物相区隔的特征。动物是真核生物，且通常是多细胞的 （例外请见黏体动物），这将其与细菌和大多数的原生生物相区隔。动物是消费者，通常在一个内腔中消化食物，这将其与植物和藻类相区隔。动物也因缺乏细胞壁而和植物、藻类和真菌不同。所有的动物都是能动的，若只算一部分的生长期间。胚胎会有形成囊胚的时 [...]" STYLE="bubble">
 <node TEXT="海绵" WIKILINK="http://zh.wikipedia.org/zh-cn/海绵" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=海绵" STYLE="fork">
 </node>
 <node TEXT="组织 (生物学) / 组织" WIKILINK="http://zh.wikipedia.org/zh-cn/组织_(生物学)" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=组织_(生物学)" STYLE="fork">
@@ -64,9 +61,7 @@
 <node TEXT="桥粒" WIKILINK="http://zh.wikipedia.org/zh-cn/桥粒" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=桥粒" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 繁殖与发育 
-几乎所有的动" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#繁殖与发育_
-几乎所有的动" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 繁殖与发育 几乎所有的动物" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#繁殖与发育_几乎所有的动物" TOOLTIPTEXT = "种将其与其他生物相区隔的特征。动物是真核生物，且通常是多细胞的 （例外请见黏体动物），这将其与细菌和大多数的原生生物相区隔。动物是消费者，通常在一个内腔中消化食物，这将其与植物和藻类相区隔。动物也因缺乏细胞壁而和植物、藻类和真菌不同。所有的动物都是能动的，若只算一部分的生长期间。胚胎会有形成囊胚的时 [...]" STYLE="bubble">
 <node TEXT="有性生殖" WIKILINK="http://zh.wikipedia.org/zh-cn/有性生殖" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=有性生殖" STYLE="fork">
 </node>
 <node TEXT="双倍体" WIKILINK="http://zh.wikipedia.org/zh-cn/双倍体" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=双倍体" STYLE="fork">
@@ -127,11 +122,7 @@
 </node>
 </node>
 </node>
-<node TEXT=" 起源和化石记录 
-
-动物普遍地被认为是" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#起源和化石记录_
-
-动物普遍地被认为是" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 起源和化石记录 动物普遍地被认为是演" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#起源和化石记录_动物普遍地被认为是演" TOOLTIPTEXT = "自一个鞭毛真核生物。它们最亲近的已知现存生物为领鞭毛虫，其在形态上和某些海绵的领细胞相似。分子研究将动物放在一个称之为后鞭毛生物的超类群中，此一类群亦包括领鞭毛虫，真菌和少数小型寄生原生生物。此一名称的由来是因为可游动细胞的鞭毛是在后面的缘故，如大多数动物的精子，而其他的真核生物则遍向于有前端的鞭 [...]" STYLE="bubble">
 <node TEXT="演化" WIKILINK="http://zh.wikipedia.org/zh-cn/演化" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=演化" STYLE="fork">
 </node>
 <node TEXT="领鞭毛虫" WIKILINK="http://zh.wikipedia.org/zh-cn/领鞭毛虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=领鞭毛虫" STYLE="fork">
@@ -165,58 +156,10 @@
 <node TEXT="蚯蚓" WIKILINK="http://zh.wikipedia.org/zh-cn/蚯蚓" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蚯蚓" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 动物类群 
-海绵" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#动物类群_
-海绵" TOOLTIPTEXT = "" STYLE="bubble">
-<node TEXT="多孔动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/多孔动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=多孔动物门" STYLE="fork">
-</node>
-<node TEXT="古杯动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/古杯动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=古杯动物门" STYLE="fork">
-</node>
-<node TEXT="海葵" WIKILINK="http://zh.wikipedia.org/zh-cn/海葵" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=海葵" STYLE="fork">
-</node>
-<node TEXT="珊瑚" WIKILINK="http://zh.wikipedia.org/zh-cn/珊瑚" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=珊瑚" STYLE="fork">
-</node>
-<node TEXT="水母" WIKILINK="http://zh.wikipedia.org/zh-cn/水母" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=水母" STYLE="fork">
-</node>
-<node TEXT="刺胞动物门 / 刺胞动物" WIKILINK="http://zh.wikipedia.org/zh-cn/刺胞动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=刺胞动物门" STYLE="fork">
-</node>
-<node TEXT="栉水母" WIKILINK="http://zh.wikipedia.org/zh-cn/栉水母" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=栉水母" STYLE="fork">
-</node>
-<node TEXT="器官" WIKILINK="http://zh.wikipedia.org/zh-cn/器官" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=器官" STYLE="fork">
-</node>
-<node TEXT="二胚层" WIKILINK="http://zh.wikipedia.org/zh-cn/二胚层" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=二胚层" STYLE="fork">
-</node>
-<node TEXT="扁盘动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/扁盘动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=扁盘动物门" STYLE="fork">
-</node>
-<node TEXT="栉水母动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/栉水母动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=栉水母动物门" STYLE="fork">
-</node>
-<node TEXT="两侧对称动物" WIKILINK="http://zh.wikipedia.org/zh-cn/两侧对称动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=两侧对称动物" STYLE="fork">
-</node>
-<node TEXT="单系群" WIKILINK="http://zh.wikipedia.org/zh-cn/单系群" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=单系群" STYLE="fork">
-</node>
-<node TEXT="体腔" WIKILINK="http://zh.wikipedia.org/zh-cn/体腔" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=体腔" STYLE="fork">
-</node>
-<node TEXT="棘皮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/棘皮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=棘皮动物" STYLE="fork">
-</node>
+<node TEXT=" 动物类群 海绵" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#动物类群_海绵" TOOLTIPTEXT = "多孔动物门）很早便和其他动物分歧。如上所述，它们缺乏可以在其他大多数门中找到的复杂组织。它们的细胞会分化，但在大多数的情况下不会构成个别的组织。海绵是不会移动的，且一般是经由将水穿透细孔来进食的。有聚合骨骼的古杯动物门可能是海绵的一种或者是单独的一个门。在真后生动物中，有两个类群是辐射对称的，且拥 [...]" STYLE="bubble">
+<node TEXT=" 后口动物 Fil" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#后口动物_Fil" TOOLTIPTEXT = "多孔动物门）很早便和其他动物分歧。如上所述，它们缺乏可以在其他大多数门中找到的复杂组织。它们的细胞会分化，但在大多数的情况下不会构成个别的组织。海绵是不会移动的，且一般是经由将水穿透细孔来进食的。有聚合骨骼的古杯动物门可能是海绵的一种或者是单独的一个门。在真后生动物中，有两个类群是辐射对称的，且拥 [...]" STYLE="bubble">
 <node TEXT="后口动物" WIKILINK="http://zh.wikipedia.org/zh-cn/后口动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=后口动物" STYLE="fork">
 </node>
-<node TEXT="蜕皮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/蜕皮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蜕皮动物" STYLE="fork">
-</node>
-<node TEXT="扁虫动物" WIKILINK="http://zh.wikipedia.org/zh-cn/扁虫动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=扁虫动物" STYLE="fork">
-</node>
-<node TEXT="冠轮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/冠轮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=冠轮动物" STYLE="fork">
-</node>
-<node TEXT="直泳动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/直泳动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=直泳动物门" STYLE="fork">
-</node>
-<node TEXT="菱形动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/菱形动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=菱形动物门" STYLE="fork">
-</node>
-<node TEXT="内肛动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/内肛动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=内肛动物门" STYLE="fork">
-</node>
-<node TEXT="刺胞动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/刺胞动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=刺胞动物门" STYLE="fork">
-</node>
-<node TEXT=" 后口动物 
-Fi" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#后口动物_
-Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="原口动物" WIKILINK="http://zh.wikipedia.org/zh-cn/原口动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=原口动物" STYLE="fork">
 </node>
 <node TEXT="原肠" WIKILINK="http://zh.wikipedia.org/zh-cn/原肠" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=原肠" STYLE="fork">
@@ -250,37 +193,11 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="毛颚动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/毛颚动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=毛颚动物门" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 蜕皮动物 
-Fi" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#蜕皮动物_
-Fi" TOOLTIPTEXT = "" STYLE="bubble">
-<node TEXT="脱皮" WIKILINK="http://zh.wikipedia.org/zh-cn/脱皮" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=脱皮" STYLE="fork">
+<node TEXT=" 蜕皮动物 Fil" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#蜕皮动物_Fil" TOOLTIPTEXT = "多孔动物门）很早便和其他动物分歧。如上所述，它们缺乏可以在其他大多数门中找到的复杂组织。它们的细胞会分化，但在大多数的情况下不会构成个别的组织。海绵是不会移动的，且一般是经由将水穿透细孔来进食的。有聚合骨骼的古杯动物门可能是海绵的一种或者是单独的一个门。在真后生动物中，有两个类群是辐射对称的，且拥 [...]" STYLE="bubble">
 </node>
-<node TEXT="节肢动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/节肢动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=节肢动物门" STYLE="fork">
+<node TEXT=" 扁虫动物 Fil" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#扁虫动物_Fil" TOOLTIPTEXT = "多孔动物门）很早便和其他动物分歧。如上所述，它们缺乏可以在其他大多数门中找到的复杂组织。它们的细胞会分化，但在大多数的情况下不会构成个别的组织。海绵是不会移动的，且一般是经由将水穿透细孔来进食的。有聚合骨骼的古杯动物门可能是海绵的一种或者是单独的一个门。在真后生动物中，有两个类群是辐射对称的，且拥 [...]" STYLE="bubble">
+<node TEXT="扁虫动物" WIKILINK="http://zh.wikipedia.org/zh-cn/扁虫动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=扁虫动物" STYLE="fork">
 </node>
-<node TEXT="昆虫" WIKILINK="http://zh.wikipedia.org/zh-cn/昆虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=昆虫" STYLE="fork">
-</node>
-<node TEXT="蜘蛛" WIKILINK="http://zh.wikipedia.org/zh-cn/蜘蛛" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蜘蛛" STYLE="fork">
-</node>
-<node TEXT="螃蟹" WIKILINK="http://zh.wikipedia.org/zh-cn/螃蟹" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=螃蟹" STYLE="fork">
-</node>
-<node TEXT="有爪动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/有爪动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=有爪动物门" STYLE="fork">
-</node>
-<node TEXT="缓步动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/缓步动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=缓步动物门" STYLE="fork">
-</node>
-<node TEXT="线虫动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/线虫动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=线虫动物门" STYLE="fork">
-</node>
-<node TEXT="线形动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/线形动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=线形动物门" STYLE="fork">
-</node>
-<node TEXT="动吻动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/动吻动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=动吻动物门" STYLE="fork">
-</node>
-<node TEXT="鳃曳动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/鳃曳动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=鳃曳动物门" STYLE="fork">
-</node>
-<node TEXT="铠甲动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/铠甲动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=铠甲动物门" STYLE="fork">
-</node>
-</node>
-<node TEXT=" 扁虫动物 
-Fi" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#扁虫动物_
-Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="扁形动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/扁形动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=扁形动物门" STYLE="fork">
 </node>
 <node TEXT="寄生虫" WIKILINK="http://zh.wikipedia.org/zh-cn/寄生虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=寄生虫" STYLE="fork">
@@ -288,6 +205,8 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="吸虫" WIKILINK="http://zh.wikipedia.org/zh-cn/吸虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=吸虫" STYLE="fork">
 </node>
 <node TEXT="绦虫纲 / 绦虫" WIKILINK="http://zh.wikipedia.org/zh-cn/绦虫纲" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=绦虫纲" STYLE="fork">
+</node>
+<node TEXT="体腔" WIKILINK="http://zh.wikipedia.org/zh-cn/体腔" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=体腔" STYLE="fork">
 </node>
 <node TEXT="腹毛动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/腹毛动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=腹毛动物门" STYLE="fork">
 </node>
@@ -304,49 +223,13 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="担颚动物" WIKILINK="http://zh.wikipedia.org/zh-cn/担颚动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=担颚动物" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 冠轮动物 
-Fi" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#冠轮动物_
-Fi" TOOLTIPTEXT = "" STYLE="bubble">
-<node TEXT="鹿" WIKILINK="http://zh.wikipedia.org/zh-cn/鹿" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=鹿" STYLE="fork">
-</node>
-<node TEXT="软体动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/软体动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=软体动物门" STYLE="fork">
-</node>
-<node TEXT="环节动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/环节动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=环节动物门" STYLE="fork">
-</node>
-<node TEXT="蜗牛" WIKILINK="http://zh.wikipedia.org/zh-cn/蜗牛" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蜗牛" STYLE="fork">
-</node>
-<node TEXT="蛤蜊" WIKILINK="http://zh.wikipedia.org/zh-cn/蛤蜊" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蛤蜊" STYLE="fork">
-</node>
-<node TEXT="鱿鱼" WIKILINK="http://zh.wikipedia.org/zh-cn/鱿鱼" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=鱿鱼" STYLE="fork">
-</node>
-<node TEXT="蚂蟥" WIKILINK="http://zh.wikipedia.org/zh-cn/蚂蟥" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蚂蟥" STYLE="fork">
-</node>
-<node TEXT="担轮幼虫" WIKILINK="http://zh.wikipedia.org/zh-cn/担轮幼虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=担轮幼虫" STYLE="fork">
-</node>
-<node TEXT="趋同演化" WIKILINK="http://zh.wikipedia.org/zh-cn/趋同演化" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=趋同演化" STYLE="fork">
-</node>
-<node TEXT="纽形动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/纽形动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=纽形动物门" STYLE="fork">
-</node>
-<node TEXT="星虫动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/星虫动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=星虫动物门" STYLE="fork">
-</node>
-<node TEXT="触手冠" WIKILINK="http://zh.wikipedia.org/zh-cn/触手冠" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=触手冠" STYLE="fork">
-</node>
-<node TEXT="并系群" WIKILINK="http://zh.wikipedia.org/zh-cn/并系群" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=并系群" STYLE="fork">
-</node>
-<node TEXT="腕足动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/腕足动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=腕足动物门" STYLE="fork">
-</node>
-<node TEXT="外肛动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/外肛动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=外肛动物门" STYLE="fork">
+<node TEXT=" 冠轮动物 Fil" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#冠轮动物_Fil" TOOLTIPTEXT = "多孔动物门）很早便和其他动物分歧。如上所述，它们缺乏可以在其他大多数门中找到的复杂组织。它们的细胞会分化，但在大多数的情况下不会构成个别的组织。海绵是不会移动的，且一般是经由将水穿透细孔来进食的。有聚合骨骼的古杯动物门可能是海绵的一种或者是单独的一个门。在真后生动物中，有两个类群是辐射对称的，且拥 [...]" STYLE="bubble">
 </node>
 </node>
-</node>
-<node TEXT=" 分类 
-根" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#分类_
-根" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 分类 根据" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#分类_根据" TOOLTIPTEXT = "的准则，或称为分类系统，动物会被不同地划分。 按形态划分 如果按形态学分类的话，动物首先按照组成的细胞数，分为单细胞动物（Pro [...]" STYLE="bubble">
 <node TEXT="分类系统" WIKILINK="http://zh.wikipedia.org/zh-cn/分类系统" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=分类系统" STYLE="fork">
 </node>
-<node TEXT=" 按形态划分 
-如果按形态学" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#按形态划分_
-如果按形态学" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 按形态划分 如果按形态学分" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#按形态划分_如果按形态学分" TOOLTIPTEXT = "的准则，或称为分类系统，动物会被不同地划分。 按形态划分 如果按形态学分类的话，动物首先按照组成的细胞数，分为单细胞动物（Pro [...]" STYLE="bubble">
 <node TEXT="单细胞动物" WIKILINK="http://zh.wikipedia.org/zh-cn/单细胞动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=单细胞动物" STYLE="fork">
 </node>
 <node TEXT="多细胞动物" WIKILINK="http://zh.wikipedia.org/zh-cn/多细胞动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=多细胞动物" STYLE="fork">
@@ -363,11 +246,19 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 </node>
 <node TEXT="辐射对称动物" WIKILINK="http://zh.wikipedia.org/zh-cn/辐射对称动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=辐射对称动物" STYLE="fork">
 </node>
+<node TEXT="两侧对称动物" WIKILINK="http://zh.wikipedia.org/zh-cn/两侧对称动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=两侧对称动物" STYLE="fork">
+</node>
+<node TEXT="刺胞动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/刺胞动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=刺胞动物门" STYLE="fork">
+</node>
+<node TEXT="栉水母动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/栉水母动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=栉水母动物门" STYLE="fork">
+</node>
 <node TEXT="无体腔动物" WIKILINK="http://zh.wikipedia.org/zh-cn/无体腔动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=无体腔动物" STYLE="fork">
 </node>
 <node TEXT="假体腔动物" WIKILINK="http://zh.wikipedia.org/zh-cn/假体腔动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=假体腔动物" STYLE="fork">
 </node>
 <node TEXT="真体腔动物" WIKILINK="http://zh.wikipedia.org/zh-cn/真体腔动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=真体腔动物" STYLE="fork">
+</node>
+<node TEXT="纽形动物门" WIKILINK="http://zh.wikipedia.org/zh-cn/纽形动物门" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=纽形动物门" STYLE="fork">
 </node>
 <node TEXT="扁形动物" WIKILINK="http://zh.wikipedia.org/zh-cn/扁形动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=扁形动物" STYLE="fork">
 </node>
@@ -376,6 +267,8 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="轮形动物" WIKILINK="http://zh.wikipedia.org/zh-cn/轮形动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=轮形动物" STYLE="fork">
 </node>
 <node TEXT="触手动物" WIKILINK="http://zh.wikipedia.org/zh-cn/触手动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=触手动物" STYLE="fork">
+</node>
+<node TEXT="棘皮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/棘皮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=棘皮动物" STYLE="fork">
 </node>
 <node TEXT="脊索动物" WIKILINK="http://zh.wikipedia.org/zh-cn/脊索动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=脊索动物" STYLE="fork">
 </node>
@@ -402,28 +295,30 @@ Fi" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="分子生物学" WIKILINK="http://zh.wikipedia.org/zh-cn/分子生物学" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=分子生物学" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 根据18s rRNA比对结果划分 
-遗传学分类和按形态分类的" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#根据18s_rRNA比对结果划分_
-遗传学分类和按形态分类的" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 根据18s rRNA比对结果划分 遗传学分类和按形态分类的出" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#根据18s_rRNA比对结果划分_遗传学分类和按形态分类的出" TOOLTIPTEXT = "的准则，或称为分类系统，动物会被不同地划分。 按形态划分 如果按形态学分类的话，动物首先按照组成的细胞数，分为单细胞动物（Pro [...]" STYLE="bubble">
 <node TEXT="比对" WIKILINK="http://zh.wikipedia.org/zh-cn/比对" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=比对" STYLE="fork">
 </node>
 <node TEXT="蜕皮假说" WIKILINK="http://zh.wikipedia.org/zh-cn/蜕皮假说" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蜕皮假说" STYLE="fork">
 </node>
+<node TEXT="蜕皮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/蜕皮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=蜕皮动物" STYLE="fork">
+</node>
+<node TEXT="冠轮动物" WIKILINK="http://zh.wikipedia.org/zh-cn/冠轮动物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=冠轮动物" STYLE="fork">
+</node>
 <node TEXT="角质层" WIKILINK="http://zh.wikipedia.org/zh-cn/角质层" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=角质层" STYLE="fork">
+</node>
+<node TEXT="担轮幼虫" WIKILINK="http://zh.wikipedia.org/zh-cn/担轮幼虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=担轮幼虫" STYLE="fork">
 </node>
 <node TEXT="幼虫" WIKILINK="http://zh.wikipedia.org/zh-cn/幼虫" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=幼虫" STYLE="fork">
 </node>
+<node TEXT="触手冠" WIKILINK="http://zh.wikipedia.org/zh-cn/触手冠" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=触手冠" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 参见 
--" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#参见_
-*" TOOLTIPTEXT = "" STYLE="bubble">
+</node>
+<node TEXT=" 参见 - " WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#参见_*" TOOLTIPTEXT = "生物- 植物 相关条目 -  [...]" STYLE="bubble">
 <node TEXT="生物" WIKILINK="http://zh.wikipedia.org/zh-cn/生物" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=生物" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 相关条目 
-Fil" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#相关条目_
-Fil" TOOLTIPTEXT = "" STYLE="bubble">
+<node TEXT=" 相关条目 File" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#相关条目_File" TOOLTIPTEXT = "cozoneszh.png/thumb/世界动物地理分区- 动物相- 动物名称列表- 动物行为学- 动物权利- 动物分类表- 动物栖地 注记  参考文献 - Klaus Nielsen. Animal Evolution: Interrelationships of the  [...]" STYLE="bubble">
 <node TEXT="动物相" WIKILINK="http://zh.wikipedia.org/zh-cn/动物相" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=动物相" STYLE="fork">
 </node>
 <node TEXT="动物名称列表" WIKILINK="http://zh.wikipedia.org/zh-cn/动物名称列表" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=动物名称列表" STYLE="fork">
@@ -437,51 +332,9 @@ Fil" TOOLTIPTEXT = "" STYLE="bubble">
 <node TEXT="动物栖地" WIKILINK="http://zh.wikipedia.org/zh-cn/动物栖地" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=动物栖地" STYLE="fork">
 </node>
 </node>
-<node TEXT=" 注记 
-
-" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#注记_
-
-" TOOLTIPTEXT = "" STYLE="bubble">
-</node>
-<node TEXT=" 参考文献 
-
-- Kl" WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#参考文献_
-
-*_Kl" TOOLTIPTEXT = "" STYLE="bubble">
-</node>
-<node TEXT=" 外部链接 - " WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#外部链接_
-
-
-*_" TOOLTIPTEXT = "" STYLE="bubble">
-<node TEXT="防止虐待动物协会" WIKILINK="http://zh.wikipedia.org/zh-cn/防止虐待动物协会" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=防止虐待动物协会" STYLE="fork">
-</node>
-<node TEXT=" 台湾昆虫维基馆
-- http://re" WEBLINK="http://insecta.idv.tw/" STYLE="fork">
-</node>
-<node TEXT=" 国立海洋生物博物馆
-- http://www.pu" WEBLINK="http://reproduce.nmmba.gov.tw/main01_2.htm" STYLE="fork">
-</node>
-<node TEXT=" 普克动物世界
-- http://" WEBLINK="http://www.pupk.com/lanmu2.asp" STYLE="fork">
-</node>
-<node TEXT=" 台湾生物多样性资讯网
-- http://tolweb.o" WEBLINK="http://taibnet.sinica.edu.tw/" STYLE="fork">
-</node>
-<node TEXT=" Tree of Life Project" WEBLINK="http://tolweb.org/" STYLE="fork">
-</node>
-<node TEXT=" Animal Diversity Web" WEBLINK="http://animaldiversity.ummz.umich.edu/site/index.html" STYLE="fork">
-</node>
-<node TEXT="密歇根大学" WIKILINK="http://zh.wikipedia.org/zh-cn/密歇根大学" MMLINK="viewmap.php?wiki=zh.wikipedia.org&topic=密歇根大学" STYLE="fork">
-</node>
-<node TEXT=" ARKive" WEBLINK="http://www.arkive.org" STYLE="fork">
-</node>
-<node TEXT=" Scientific American Magazine (December 2005 Issue) - Getting a Leg Up on Land" WEBLINK="http://www.sciam.com/article.cfm?chanID=sa006&articleID=000DC8B8-EA15-137C-AA1583414B7F0000" STYLE="fork">
-</node>
-<node TEXT=" LOFTER动物" WEBLINK="http://www.lofter.com/tag/%E5%8A%A8%E7%89%A9?from=tagsearch" STYLE="fork">
-</node>
+<node TEXT=" 注记 " WIKILINK = "http://zh.wikipedia.org/zh-cn/动物#注记" TOOLTIPTEXT = "考文献 - Kl [...]" STYLE="bubble">
 </node>
 </node>
 </map>
-
 
 

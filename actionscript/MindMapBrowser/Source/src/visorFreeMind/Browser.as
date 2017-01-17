@@ -84,10 +84,10 @@ class visorFreeMind.Browser {
 	var loading:Loading;
 
 	function Browser(file:String,_mc:MovieClip){
-		trace("new Browser, shadow="+withShadow,0);
+		//trace("new Browser, shadow="+withShadow,0);
 		browser=this;
 		flashVersion=getFlashVersion();
-		trace("flash version: "+flashVersion);
+		//trace("flash version: "+flashVersion);
 		mcl.addListener(this); // For waiting for the load of all images
 		PrototypesCreator.init();
 		mc_container=_mc;
@@ -118,7 +118,7 @@ class visorFreeMind.Browser {
 
 	function checkImagesLoaded(){
 		if(imgsLoaded==true){
-			trace("imgsloaded");
+			//trace("imgsloaded");
 			relocateMindMap();
 			imgsLoaded=false;
 			historyManager.genMMEnded();
@@ -145,28 +145,28 @@ class visorFreeMind.Browser {
 	public function loadImage(fileName,mc_target){
 		mcl.loadClip(fileName,mc_target);
 		numWaitingImages++;
-		trace("waiting: "+numWaitingImages+" add Loading :"+fileName);
+		//trace("waiting: "+numWaitingImages+" add Loading :"+fileName);
 		showLoading();
 	}
 
 	public function onLoadInit(target){
-		trace("init"); 
+		//trace("init"); 
 	}
 
 	public function onLoadProgress(target){
 		var progress = mcl.getProgress(target);
-		trace("progress Loading :"+progress.bytesLoaded / progress.bytesTotal);
+		//trace("progress Loading :"+progress.bytesLoaded / progress.bytesTotal);
 	}
 
 	public function onLoadComplete(target){
 		numWaitingImages--;
-		trace("rest Loading :"+numWaitingImages);
+		//trace("rest Loading :"+numWaitingImages);
 		validLoaded();
 	}
 
 	public function onLoadError(target,error){
 		numWaitingImages--;
-		trace("rest Loading :"+numWaitingImages+" "+error);
+		//trace("rest Loading :"+numWaitingImages+" "+error);
 		validLoaded();
 	}
 
@@ -205,9 +205,9 @@ class visorFreeMind.Browser {
 
 
 	function createInfoWindow(){
-		trace("creating info creation");
+		//trace("creating info creation");
 		if(mc_container.info==null){
-			trace("showing info creation");
+			//trace("showing info creation");
 			mc_container.info=mc_container.createEmptyMovieClip("info",8);
 			mc_container.info.createEmptyMovieClip("tex_container",10);
 			mc_container.info.tex_container.createTextField("txt", 1, 0, 0,170,10);
@@ -239,7 +239,7 @@ class visorFreeMind.Browser {
 
 
 	function showInfo(texto){
-		trace("showing info"+mc_container.info);
+		//trace("showing info"+mc_container.info);
 		var sombra=mc_container.info.createEmptyMovieClip("sombra",9);
 		mc_container.info.tex_container.dropShadow(8,4,4,0x777799,sombra);
 		mc_container.info._x=_root._xmouse+14;
@@ -295,9 +295,9 @@ class visorFreeMind.Browser {
 			newText=newText.substr(newText.indexOf("<body>")+6);
 		mc_container.tooltip.tex_container.textfield.htmlText=newText;
 		
-		trace(texto);
-		trace(newText);
-		trace(mc_container.tooltip.tex_container.textfield.htmlText);*/
+		//trace(texto);
+		//trace(newText);
+		//trace(mc_container.tooltip.tex_container.textfield.htmlText);*/
 		
 		var tt=mc_container.tooltip;
 		my_fmt = new TextFormat();
@@ -844,7 +844,7 @@ class visorFreeMind.Browser {
 	
 	public function unfoldLocalLink(nodeId:String){
 		var nodoXml:XMLNode=mc_floor[nodeId].inst.node_xml;
-		trace(nodeId+ " "+nodoXml);
+		//trace(nodeId+ " "+nodoXml);
 		if(mc_floor[nodeId]._visible==false){
 			unfold(nodoXml);
 		}else{
@@ -855,7 +855,7 @@ class visorFreeMind.Browser {
 	}
 	
 	public function unfoldLinks(node:Node){
-		trace("unfolding links for: "+node.getID());
+		//trace("unfolding links for: "+node.getID());
 		var str=node.getID();
 		var lista:Array=[];
 		for( var i=0;i<list_arrows.length;i++){
@@ -864,7 +864,7 @@ class visorFreeMind.Browser {
 		}
 		
 		for(var i=0;i<lista.length;i++){
-			trace("encontrado:"+lista[i]);
+			//trace("encontrado:"+lista[i]);
 			var nodoXml:XMLNode=mc_floor[lista[i]].inst.node_xml;
 			if(mc_floor[lista[i]]._visible==false){
 				unfold(nodoXml);
@@ -980,7 +980,7 @@ class visorFreeMind.Browser {
 	function getBounds(){
 		var comparator=floor.getCanvas();
 		var b=listNodesR[0].ref_mc.getBounds(comparator);
-		trace("b:"+b+" comp"+comparator);
+		//trace("b:"+b+" comp"+comparator);
 		var aux;
 		for(var i=0;i<listNodesL.length;i++){
 			aux=listNodesL[i].ref_mc.getBounds(comparator);

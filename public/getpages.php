@@ -88,8 +88,8 @@
 	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-	$debug = false
-	if $debug
+	$debug = true;
+	if ($debug)
 	{//get test data from local
 		$file = "animal.txt";
 	  $contents = file_get_contents($file);

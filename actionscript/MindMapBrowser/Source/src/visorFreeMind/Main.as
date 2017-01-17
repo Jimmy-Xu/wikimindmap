@@ -120,8 +120,8 @@ class visorFreeMind.Main {
 	   {
 	   	   if(initialized==true)return true;
 	   	   else initialized=true;
-	   	   Flashout.init();
-		   trace("Starting flash FreeMind Browser",2);
+	   	   //Flashout.init();
+		   //trace("Starting flash FreeMind Browser",2);
 
 			// set the Flash movie to have a fixed anchor
 		    // in the top left corner of the screen.
@@ -169,11 +169,11 @@ class visorFreeMind.Main {
 		   if(!isNaN(_root.ShotsWidth))
 		   		PictureTaker.ShotsWidth=Number(_root.ShotsWidth);
 		   if(_root.initLoadFile!=null){
-				trace("initial mindmap: "+_root.initLoadFile,2);
+				//trace("initial mindmap: "+_root.initLoadFile,2);
 				browser=new Browser(_root.initLoadFile,_root);
 		   }
 			else{
-				trace("initial mindmap: index.mm",2);
+				//trace("initial mindmap: index.mm",2);
 				browser=new Browser("index.mm",_root);
 			}
 
