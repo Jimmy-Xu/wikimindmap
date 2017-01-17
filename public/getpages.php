@@ -196,7 +196,7 @@
 				$ttorg = mb_substr($contents,strpos($contents,$chapEnd)+2, 500);
 				$tooltip = createToolTipText($ttorg, 150);
 
-				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.$wChap;
+				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.urldecode($wChap);
 				echo  "<node TEXT=\"".cleanText($Chap)."\" WIKILINK = \"".cleanWikiLink($wikilink)."\" TOOLTIPTEXT = \"".$tooltip."\" STYLE=\"bubble\">\n";
 				//echo  '<node TEXT="'.cleanText($Chap).'" WIKILINK = "'.cleanWikiLink($wikilink).'"  STYLE="bubble">/n';
 				//echo 'node TEXT="'.$Chap.'" STYLE="bubble"><br>';
@@ -239,7 +239,7 @@
 				$ttorg = mb_substr($contents,strpos($contents,$subChapEnd)+3, 500);
 				//$tooltip = createToolTipText($ttorg, 150);
 
-				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.$wSubChap;
+				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.urldecode($wSubChap);
 				echo  "<node TEXT=\"".cleanText($SubChap)."\" WIKILINK = \"".cleanWikiLink($wikilink)."\" TOOLTIPTEXT = \"".$tooltip."\" STYLE=\"bubble\">\n";
 				//echo  '<node TEXT="'.cleanText($Chap).'" WIKILINK = "'.cleanWikiLink($wikilink).'"  STYLE="bubble">/n';
 				//echo 'node TEXT="'.$Chap.'" STYLE="bubble"><br>';
