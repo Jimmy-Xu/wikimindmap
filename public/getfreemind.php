@@ -20,7 +20,8 @@
 	//header('Content-Disposition: attachment; filename=map.mm');
 #	header('Content-Length: '.strlen($mindmap_entry->mindmap));
 	header('Connection: close');
-	header('Content-Type: text/x-troff-mm; charset=utf-8');
+	//header('Content-Type: text/x-troff-mm; charset=utf-8');
+	header('Content-Type: text/plain; charset=utf-8');
 	header('Cache-Control: store, cache');
 	header('Pragma: cache');
 
@@ -49,6 +50,10 @@
 		case "www.self-qs.de":
 			$index_path = "";
 			$access_path = "/m3WDB";
+			break;
+		case "zh.wikipedia.org":
+			$index_path = "/w";
+			$access_path = "/zh-cn";
 			break;
 		default:
 			$index_path = "/w";
@@ -85,14 +90,12 @@
 
 	$ch = curl_init();
 	$timeout = 5; // set to zero for no timeout
+	$useragent=$_SERVER['HTTP_USER_AGENT']; // get user agent
 	curl_setopt ($ch, CURLOPT_URL, $url);
 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	// spoofing FireFox 2.0
-	$useragent=$_SERVER['HTTP_USER_AGENT'];
-	// set user agent
 	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-	// set the rest of your cURL options here
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
 	$debug = false;
 	if ($debug)
@@ -104,22 +107,24 @@
 	{//get data from wikipedia
 		$contents = curl_exec($ch);
 		curl_close($ch);
+		//echo $url;
+		//echo $contents;
 	}
 
 	// Decode from UTF-8
 	//$contents = utf8_decode($contents);
 
-	$contents = removeComments($contents);
-	$contents = removeClassInfo($contents);
-
 	//convert zh-TW to zh-cn
-	$contents = MediaWikiZhConverter::convert($contents,"zh-cn","gbk");
+	$contents = MediaWikiZhConverter::convert($contents,"zh-cn","utf-8");
 
 	//remove none-printable unicode charactor
 	/*
 	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
 	*/
 	$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
+
+	$contents = removeComments($contents);
+	$contents = removeClassInfo($contents);
 
 	//check encoding
 	//echo mb_detect_encoding($contents);

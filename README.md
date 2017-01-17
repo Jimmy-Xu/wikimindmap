@@ -1,6 +1,16 @@
+wikimindmap
+========================================
+
+Search wikipedia and show result as freemind.
+
+# run env
+- Chrome 50
+- Flash player 23
+
 # usage
 ```
 //build docker image
+$ export http_proxy=http://x.x.x.x:8118; export https_proxy=http://x.x.x.x:8118
 $ ./build.sh
 
 //start docker container
@@ -48,10 +58,11 @@ $ mtasc visorFreeMind/Main.as -swf visorFreemind.swf -header 800:600:24 -version
 
 ## compile swf with FlashDevelop 3.0.6 RTM
 ```
+http://www.flashdevelop.org/community/viewtopic.php?t=5669
 ```
 
 # other
 
-*https://github.com/mphasize/noder
-https://github.com/ubunatic/mm2wiki
-https://github.com/ingee/freemind-webapp
+- https://github.com/mphasize/noder
+- https://github.com/ubunatic/mm2wiki
+- https://github.com/ingee/freemind-webapp

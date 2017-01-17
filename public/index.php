@@ -75,7 +75,7 @@ if (isset($_GET["topic"])) {
                 <td width="5%">
                     &nbsp;
                 </td>
-                <td width="90%" height="100%">
+                <td width="90%" height="400">
                     <div id="flashcontent">
                         <p>
                             Flash plugin or Javascript are turned off.
@@ -105,7 +105,7 @@ if (isset($_GET["topic"])) {
 
                         function runFlash(){
                             var h = getWindowHeight();
-                            h = h - 150;
+                            h = h - 20;
 
                             document.getElementById("flashcontent").style.height = h;
                             var fo = new FlashObject("visorFreemind.swf", "visorFreeMind", "100%", h, 6, "#9999ff");
