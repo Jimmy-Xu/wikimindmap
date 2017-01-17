@@ -18,6 +18,13 @@ $ ./build.sh
 //start docker container
 $ ./run.sh
 
+
+//start hyper container
+$ hyper run -d --name mywikimindmap -p 80:80 xjimmyshcn/wikimindmap
+$ ip=`hyepr fip allocate 1`
+$ hyper fip attach $ip mywikimindmap
+
+
 //open in chrome
 http://<ip>/public/viewmap.php
 ```
