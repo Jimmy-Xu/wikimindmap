@@ -104,7 +104,7 @@
 	//$contents = utf8_decode($contents);
 
 	//convert zh-TW to zh-cn
-	$contents = MediaWikiZhConverter::convert($contents,"zh-cn","utf-8");
+	//$contents = MediaWikiZhConverter::convert($contents,"zh-cn","utf-8");
 
 	//remove none-printable unicode charactor
 	/*
@@ -196,7 +196,7 @@
 				$ttorg = mb_substr($contents,strpos($contents,$chapEnd)+2, 500);
 				$tooltip = createToolTipText($ttorg, 150);
 
-				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.urldecode($wChap);
+				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.implode('.',explode('%',urlencode($wChap)));
 				echo  "<node TEXT=\"".cleanText($Chap)."\" WIKILINK = \"".cleanWikiLink($wikilink)."\" TOOLTIPTEXT = \"".$tooltip."\" STYLE=\"bubble\">\n";
 				//echo  '<node TEXT="'.cleanText($Chap).'" WIKILINK = "'.cleanWikiLink($wikilink).'"  STYLE="bubble">/n';
 				//echo 'node TEXT="'.$Chap.'" STYLE="bubble"><br>';
@@ -239,7 +239,7 @@
 				$ttorg = mb_substr($contents,strpos($contents,$subChapEnd)+3, 500);
 				//$tooltip = createToolTipText($ttorg, 150);
 
-				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.urldecode($wSubChap);
+				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.implode('.',explode('%',urlencode($wSubChap)));
 				echo  "<node TEXT=\"".cleanText($SubChap)."\" WIKILINK = \"".cleanWikiLink($wikilink)."\" TOOLTIPTEXT = \"".$tooltip."\" STYLE=\"bubble\">\n";
 				//echo  '<node TEXT="'.cleanText($Chap).'" WIKILINK = "'.cleanWikiLink($wikilink).'"  STYLE="bubble">/n';
 				//echo 'node TEXT="'.$Chap.'" STYLE="bubble"><br>';
@@ -342,19 +342,21 @@
 	// Functions to clean text from special caracters
 	//-------------------------------------------------------------------------------------------
 
-  	function cleanText($text) {
+  function cleanText($text) {
 		$trans = array("=" => "", "[" => "", "]" => "", "{" => "", "}" => "", "_" => " ", "'" => "", "|" => "/",  "?" => "", "*" => "-", "\"" => "'");
 		$clean = strtr ($text, $trans);
 		// Experimental remove a lot of reutrns (\n)
-		$transW = array( "\n\n\n" => "");
+		$transW = array( "\n" => "");
 		$clean = strtr ($clean, $transW );
-		return $clean;
+
+		$clean = MediaWikiZhConverter::convert($clean,"zh-cn","utf-8");
+		return explode(' ',trim($clean))[0];
 	}
 
-    function cleanWikiLink($text) {
+  function cleanWikiLink($text) {
 		$trans = array("=" => "", "[" => "", "]" => "", "{" => "", "}" => "");
 		$clean = strtr ($text, $trans);
-		return $clean;
+		return explode('_',$clean)[0];
 	}
 
 	//-------------------------------------------------------------------------------------------
