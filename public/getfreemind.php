@@ -94,7 +94,7 @@
 	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
 	// set the rest of your cURL options here
 
-	$debug = true;
+	$debug = false;
 	if ($debug)
 	{//get test data from local
 		$file = "animal.txt";

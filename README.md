@@ -49,3 +49,9 @@ $ mtasc visorFreeMind/Main.as -swf visorFreemind.swf -header 800:600:24 -version
 ## compile swf with FlashDevelop 3.0.6 RTM
 ```
 ```
+
+# other
+
+*https://github.com/mphasize/noder
+https://github.com/ubunatic/mm2wiki
+https://github.com/ingee/freemind-webapp

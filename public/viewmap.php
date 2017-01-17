@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 	Copyright (C) 2010  Felix Nyffenegger
 
@@ -78,8 +78,8 @@ if (isset($_GET["topic"])) {
                 <td width="90%" height="400">
                     <div id="flashcontent">
                         <p>
-                            Flash plugin or Javascript are turned off. 
-                            Activate both  and reload to view the mindmap 
+                            Flash plugin or Javascript are turned off.
+                            Activate both  and reload to view the mindmap
                         </p>
                     </div>
                     <script type="text/javascript">
@@ -102,11 +102,11 @@ if (isset($_GET["topic"])) {
                             }
                             return windowHeight;
                         }
-                        
+
                         function runFlash(){
                             var h = getWindowHeight();
                             h = h - 200;
-                            
+
                             document.getElementById("flashcontent").style.height = h;
                             var fo = new FlashObject("visorFreemind.swf", "visorFreeMind", "100%", h, 6, "#9999ff");
                             fo.addParam("quality", "high");
@@ -123,10 +123,11 @@ if (isset($_GET["topic"])) {
                     &nbsp;
                 </td>
             </tr>
+						<!--
             <tr class="bar">
                 <td colspan="3">
                     <span class="menuText">
-                        <?php 
+                        <?php
 							if ($production) {
 								echo '<a href="help.htm">Help</a> <a href="about.htm">About / Support WikiMindMap</a> <a href="contact.htm">Contact</a>';
 							} else
@@ -137,12 +138,15 @@ if (isset($_GET["topic"])) {
                     </span>
                 </td>
             </tr>
+					-->
         </table>
+				<!--
         <div align="center" class="footerText">
             All content of the mindmap is derived from the wiki selected above and is licensed under the terms of <a href="http://www.gnu.org/copyleft/fdl.html" target="_blank">GNU Free Documentaion Licence</a>. You can retrieve the original material by a left click on the topic.
             <br>
             Copyright (c) 2007 by Felix Nyffenegger, @nyfelix
         </div>
+			-->
         <p>
             &nbsp;
         </p>
