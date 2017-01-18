@@ -1,8 +1,12 @@
 <?php
-	header('Content-Type:text/text; charset=utf-8');
+	$local = false;   //http://localhost
+	$debug = false;   //use test data
+	$useproxy = true; //use http_proxy
+
+	header('Content-Type:text/plain; charset=utf-8');
 
 	#for convert zh-TW to zh-cn
-	define("MEDIAWIKI_PATH", "/var/www/html/mediawiki-1.26.2");
+	define("MEDIAWIKI_PATH", "mediawiki-1.26.2");
 	require_once "mediawiki-zhconverter.inc.php";
 /*
 	Copyright (C) 2010  Felix Nyffenegger
@@ -26,9 +30,15 @@
 	//-------------------------------------------------------------------------------------------
 
 	$time_start = microtime(true);
-	$wiki = $_GET['Wiki'];
- 	$topic = $_GET['Topic'];
-	//echo $topic;
+	if ($local == true) {
+		$wiki = "zh.wikipedia.org";
+		$topic = "%E5%8A%A8%E7%89%A9";  //动物
+	}
+	else {
+		$wiki = $_GET['Wiki'];
+		$topic = $_GET['Topic'];
+	}
+
 	$topic = urldecode($topic);
 	$topic = str_replace(" ", "_", $topic);
 
@@ -51,7 +61,7 @@
 			break;
 	}
 
-	$url = 'http://'.$wiki.$index_path.'/index.php?title='.$topic.'&action=raw';
+	$url = 'https://'.$wiki.$index_path.'/index.php?title='.urlencode($topic).'&action=raw';
 	//echo $url;
 	//-------------------------------------------------------------------------------------------
 	// Defaults for the Parser
@@ -79,24 +89,45 @@
  	//-------------------------------------------------------------------------------------------
 
 
-	$ch = curl_init();
-	$timeout = 5; // set to zero for no timeout
-	$useragent=$_SERVER['HTTP_USER_AGENT']; // get user agent
-	curl_setopt ($ch, CURLOPT_URL, $url);
-	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-	$debug = false;
-	if ($debug)
-	{//get test data from local
-		$file = "animal.txt";
-	  $contents = file_get_contents($file);
+	$timeout = 5; // set to zero for no timeout
+	if ($local==true){
+		$useragent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36";
+	}
+	else{
+		$useragent = $_SERVER['HTTP_USER_AGENT']; // get user agent
+	}
+
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+	curl_setopt($ch, CURLOPT_VERBOSE, false);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+	if ($useproxy==true){
+		//use proxy
+		curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
+		curl_setopt($ch, CURLOPT_PROXY, "192.168.144.128");
+		curl_setopt($ch, CURLOPT_PROXYPORT, "8118");
+	}
+
+	if ($debug==true){
+		//get test data from local
+		$file = "data/animal.txt";
+	  	$contents = file_get_contents($file);
 	}
 	else
-	{//get data from wikipedia
+	{
+		//get data from wikipedia
 		$contents = curl_exec($ch);
+		if ($contents == false and $debug == true) {
+			printf("cUrl error (#%d): %s<br>\n", curl_errno($ch), htmlspecialchars(curl_error($ch)));
+		}
 		curl_close($ch);
 	}
 
@@ -107,10 +138,8 @@
 	//$contents = MediaWikiZhConverter::convert($contents,"zh-cn","utf-8");
 
 	//remove none-printable unicode charactor
-	/*
+
 	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
-	*/
-	$contents = preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))",$contents);
 
 	//check encoding
 	//echo mb_detect_encoding($contents);

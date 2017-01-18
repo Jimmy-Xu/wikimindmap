@@ -1,0 +1,263 @@
+{{noteTA
+|G1=IT
+}}
+
+此列表列出了早期至今的所有[[操作系统]]名称。
+
+==早期[[操作系统]]（专利保护）==
+*[[TRS-DOS]]，[[ROM OS's]] 
+*[[TI99-4]]
+*Commodore PET，64，和 VIC-20，
+*第一套IBM-PC
+*System v1.0~7.6.1，Mac OS 7.6~9.2.2（[[苹果电脑]]）
+*Sinclair Micro和QnX等
+
+==商业操作系统（非Unix）==
+*[[CPM操作系统]]
+*[[MP/M-80]]
+*[[UCSD P-system]]
+*[[Mini-FLEX]]
+*[[SSB-DOS]]
+*[[CP/M-86]]
+*[[DR-DOS]]
+*[[FreeDOS]]
+*[[MS-DOS]]
+*[[PC-DOS]]
+*[[Mach]] 由卡纳尼基梅隆大学研究
+*[[L4微内核]] 第二代微内核
+*[[CHORUS]]
+*[[Choices]]
+*[[Multics]]
+*[[OS-9]]
+*[[NSJ]]
+*[[Netware]]:一种网络服务器操作系统
+
+==Unix及类似系统==
+*[[Unix]]  [[System V]]
+*[[Xenix]]-微软
+*[[OS/2]]-IBM 微软
+*[[SCO UNIX]]-SCO
+*[[IRIX]]-SGI
+*[[A/UX]]-Apple->[[Mac OS X]]
+*[[HP-UX]]-HP
+*[[AIX]]-IBM
+*[[Solaris]]，[[Open Solaris]]<-[[SunOS]]
+*[[OS/390]]
+*[[Chorus OS]]
+*[[Cromix]]
+*[[UNIflex]]
+*[[QNX]]
+*[[OS-9]]
+*[[Digital UNIX]]->[[Tru64]]
+*[[DNIX]]
+*[[Inferno]]
+*[[MenuetOS]]
+*[[OSF/1]]
+*[[Plan9]]
+*[[Ultrix]]
+*[[UniCOS]]
+*[[z/OS]]
+*[[Syllable]]
+*[[Minix]]
+*[[BSD]]
+:*[[NetBSD]]
+::*[[OpenBSD]]
+:*[[FreeBSD]]
+::*[[PC-BSD]]
+::*[[DragonFly BSD]]
+:*[[Kylin]]([[麒麟操作系统]])
+:*[[OS X]]
+:*[[SUN OS]]
+*[[GNU]]
+:*[[Hurd]]
+::*[[GNU/Hurd]]
+:*[[Linux]]（或称GNU/Linux）
+:::*[[Debian]]
+:::*[[Red Hat]]
+:::*[[Ubuntu]]
+:::*[[Linux mint]]
+:::*[[Deepin]]<-Linux Deepin<-[[Hiweed]]
+:::*[[StartOS]]<-[[ylmf OS]]
+:::*[[Chrome OS]]
+:::*[[Android]]
+:::*[[ezgo]]
+:::*[[安同 GNU/Linux]]
+
+==其他==
+===[[Apsom]]===
+*[[MI-SOM]]
+**[[MI-SOM1.1]]
+**[[MI-SOM1.2]]
+
+===[[Acorn]]===
+*[[Arthur]]
+*[[ARX]]
+*[[RISC OS]]
+*[[RISCiX]]
+
+
+===[[Amiga]]===
+*[[AmigaOS]]
+
+===[[Atari ST]]===
+*[[TOS]]
+*[[MultiTOS]]
+*[[MiNT]]
+
+===[[苹果电脑]]（Apple/Macintosh）===
+*[[Apple DOS]]
+*[[ProDOS]]
+*[[Mac OS]]
+*[[Mac OS X]]
+*[[pink OS]]
+*[[BeOS]]
+*[[A/UX]]
+
+===[[Be]]===
+*[[BeOS]]
+*[[BeIA]]
+*[[Haiku]]
+
+===[[Digital]]/[[康柏]]（Compaq）===
+*[[AIS]]
+*[[OS-8]]
+*[[RSTS/E]]
+*[[RSX-11]]
+*[[RT-11]] 
+*[[TOPS-10]]
+*[[TOPS-20]]
+*[[VMS]]（后更名为[[OpenVMS]]）
+
+===[[IBM]]===
+*[[OS/2]]
+*[[AIX]]
+*[[OS/400]]
+*[[OS/390]]
+*[[VM/CMS]]
+*[[DOS/VSE]]
+*[[VSE/SP]]
+*[[VSE/ESA]]
+*[[OS/360]]
+*[[MFT]]
+*[[MVT]]
+*[[SVS]]
+*[[MVS]]
+*[[TPF]]
+*[[ALCS]]
+*[[z/OS]]
+*[[PC-DOS]]
+*[[pink OS]]
+
+===[[微软]]（Microsoft）===
+*[[MS-DOS]]
+*[[Xenix]]
+*基于MS-DOS操作系统的[[Windows]]
+**[[Windows 1.0]]
+**[[Windows 2.0]]
+**[[Windows/286 2.1]]
+**[[Windows/386 2.1]]
+**[[Windows 3.x|Windows 3.0]]
+**[[Windows 3.x|Windows 3.1]]
+**[[Windows for Workgroups 3.1]]
+**[[Windows for Workgroups 3.11]]
+**[[Windows 95]]
+**[[Windows 98]]
+**[[Windows ME]]
+*[[Windows NT]]
+**[[Windows NT 3.1]]
+**[[Windows NT 3.5]]
+**[[Windows NT 3.51]]
+**[[Windows NT 4.0]]
+**[[Windows 2000]]
+**[[Windows XP]]
+**[[Windows Server 2003]]
+<!--**[[Windows Longhorn]]-->
+**[[Windows Vista]]
+**[[Windows Server 2008]]
+**[[Windows 7]]
+**[[Windows Server 2008 R2]]
+**[[Windows 8]]
+**[[Windows Server 2012]]
+**[[Windows 8.1]]
+**[[Windows Server 2012 R2]]
+**[[Windows 10]]
+**[[Windows Server 2016]]
+
+===[[Novell]]===
+*[[NetWare]]
+*[[Unixware]]
+*[[SUSE]] Linux
+
+===[[NeXT]]===
+*[[NEXTSTEP]]（即之后的Mac OS X）
+*[[貝爾實驗室九號計畫|九號計畫]]
+*[[Inferno]]
+
+===[[Prime Computer]]===
+*[[Primos]]
+
+===[[西門子公司|西门子]]===
+*[[BS2000]] - 用於西門子公司的[[大型主機]]。
+*[[SINIX]]（也稱[[Reliant UNIX]]） - 用於西門子公司的[[UNIX]]電腦系統。
+
+===[[個人數位助理]]（[[PDA]]）操作系统===
+*[[Palm OS]]
+*[[Pocket PC]]
+*[[EPOC (操作系统)|EPOC]]
+*[[Microsoft Windows CE]]
+*[[Linux]]
+
+===[[行動作業系統]]=== 
+*嵌入式（以[[Linux]]為基礎）
+**[[Access Linux]]
+**[[Android]]
+**[[Bada (操作系统)|bada]]
+**[[Firefox OS]]
+**[[LiMo]]
+**[[Maemo]]
+**[[Meego]]
+**[[Mobilinux]]
+**[[Moblin project|Moblin]]
+**[[MotoMagx]]
+**[[Openmoko Linux|Openmoko]]
+**[[WebOS]]
+**[[Qt Extended]]
+**[[Ubuntu Mobile]]
+*其它
+**[[BlackBerry OS]]
+**[[BREW]]
+**[[DoJa]]
+**[[Palm OS]]
+**[[iOS]]
+**[[JavaOS]]
+**[[JNode]]
+**[[JX]]
+**[[PlayStation Portable系統軟件|PSP]]
+**[[SavaJe]]
+**[[Symbian OS]]
+**Windows ([[Windows CE|CE]], [[Windows Embedded|Embedded]], [[Windows Mobile|Mobile]], [[Windows_XP的版本#Windows XP Tablet PC Edition|XP Tablet PC]], [[Windows Phone|Phone]])
+
+==其他操作系统==
+* 动态可扩展操作系统
+** MIT的Exo Kernel
+** 华盛顿大学的 SPIN
+** 哈佛大学的 VINO
+**illinois大学的Choices
+*[[ReactOS]]
+*[[JNode]]
+*[[MenuetOS]]
+
+== 参考文献 ==
+{{Reflist}}
+
+==参见==
+*[[作業系統歷史年表]]
+*[[软件]]
+*[[DOS]]（磁盘操作系统）
+*[[微軟操作系統列表]]
+
+{{-}}
+{{操作系统}}
+
+[[Category:操作系统|*]]
+[[Category:软件列表]]
