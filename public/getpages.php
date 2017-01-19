@@ -1,7 +1,7 @@
 <?php
 	$local = false;   //http://localhost
 	$debug = false;   //use test data
-	$useproxy = true; //use http_proxy
+	$useproxy = false; //use http_proxy
 
 	header('Content-Type:text/plain; charset=utf-8');
 
@@ -30,6 +30,9 @@
 	//-------------------------------------------------------------------------------------------
 
 	$time_start = microtime(true);
+	if ($debug == true){
+		$file = "data/os.txt";
+	}
 	if ($local == true) {
 		$wiki = "zh.wikipedia.org";
 		$topic = "%E5%8A%A8%E7%89%A9";  //动物
@@ -118,7 +121,7 @@
 
 	if ($debug==true){
 		//get test data from local
-		$file = "data/animal.txt";
+		$topic = $file;
 	  	$contents = file_get_contents($file);
 	}
 	else
@@ -139,7 +142,10 @@
 
 	//remove none-printable unicode charactor
 
+	/*
 	$contents = preg_replace('/(?>[\x00-\x1F]|\xC2[\x80-\x9F]|\xE2[\x80-\x8F]{2}|\xE2\x80[\xA4-\xA8]|\xE2\x81[\x9F-\xAF])/', '', $contents);
+	*/
+
 
 	//check encoding
 	//echo mb_detect_encoding($contents);
@@ -174,18 +180,18 @@
 	$openSubChap = FALSE;
 	$counter = 0;
 
-	while (strpos($contents,$linkStart) > -1 ||
-	       strpos($contents,$wwwLinkStart) > -1 ||
-		   strpos($contents,$chapStart) > -1 ||
-		   strpos($contents,$subChapStart) > -1)
+	while (mb_strpos($contents,$linkStart) > -1 ||
+	       mb_strpos($contents,$wwwLinkStart) > -1 ||
+		   mb_strpos($contents,$chapStart) > -1 ||
+		   mb_strpos($contents,$subChapStart) > -1)
 	{
 		$counter++;
 		// is the next object to parse a section or a wikilink?
 
-		$iChap = strpos($contents, $chapStart);
-		$iSubChap = strpos($contents, $subChapStart);
-		$iLink = strpos($contents, $linkStart);
-		$iWwwLink = strpos($contents, $wwwLinkStart);
+		$iChap = mb_strpos($contents, $chapStart);
+		$iSubChap = mb_strpos($contents, $subChapStart);
+		$iLink = mb_strpos($contents, $linkStart);
+		$iWwwLink = mb_strpos($contents, $wwwLinkStart);
 
 		//echo '<br>Chap: '.$iChap.' Link:'.$iLink.' WWW:'.$iWwwLink.'<br>';
 
@@ -195,9 +201,9 @@
 		if ($iChap > -1 && ($iChap < $iLink || !$iLink) && ($iChap < $iWwwLink || !$iWwwLink) && ($iChap < $iSubChap || !$iSubChap))
 		{
 
-			$contents = strstr($contents, $chapStart);
-			$contents = mb_substr($contents, strlen($chapStart));
-			$Chap = mb_substr($contents,0, strpos($contents,$chapEnd));
+			$contents = mb_strstr($contents, $chapStart);
+			$contents = mb_substr($contents, mb_strlen($chapStart));
+			$Chap = mb_substr($contents,0, mb_strpos($contents,$chapEnd));
 
 			//echo $Chap.'<br>';
 			if ($Chap !="")
@@ -222,7 +228,7 @@
 				// Create Topic
 				$wChap = str_replace(" ","_", $Chap);
 				$wChap = trim($wChap, "_");
-				$ttorg = mb_substr($contents,strpos($contents,$chapEnd)+2, 500);
+				$ttorg = mb_substr($contents,mb_strpos($contents,$chapEnd)+2, 500);
 				$tooltip = createToolTipText($ttorg, 150);
 
 				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.implode('.',explode('%',urlencode($wChap)));
@@ -233,8 +239,8 @@
 
 			}
 
-			$contents = strstr($contents,$chapEnd);
-			$contents = mb_substr($contents, strlen($chapEnd));
+			$contents = mb_strstr($contents,$chapEnd);
+			$contents = mb_substr($contents, mb_strlen($chapEnd));
 
 		}
 
@@ -244,9 +250,9 @@
 		if ($iSubChap > -1 && ($iSubChap < $iLink || !$iLink) && ($iSubChap < $iWwwLink || !$iWwwLink) && ($iSubChap <= $iChap || !$iChap))
 		{
 			//echo "SUbCHap";
-			$contents = strstr($contents, $subChapStart);
-			$contents = mb_substr($contents, strlen($subChapStart));
-			$SubChap = mb_substr($contents,0, strpos($contents,$subChapEnd));
+			$contents = mb_strstr($contents, $subChapStart);
+			$contents = mb_substr($contents, mb_strlen($subChapStart));
+			$SubChap = mb_substr($contents,0, mb_strpos($contents,$subChapEnd));
 
 			//echo $Chap.'<br>';
 			if ($SubChap !="")
@@ -265,7 +271,7 @@
 				// Create Topic
 				$wSubChap = str_replace(" ","_", $SubChap);
 				$wSubChap = trim($wSubChap, "_");
-				$ttorg = mb_substr($contents,strpos($contents,$subChapEnd)+3, 500);
+				$ttorg = mb_substr($contents,mb_strpos($contents,$subChapEnd)+3, 500);
 				//$tooltip = createToolTipText($ttorg, 150);
 
 				$wikilink  = 'http://'.$wiki.$access_path.'/'.$topic.'#'.implode('.',explode('%',urlencode($wSubChap)));
@@ -275,8 +281,8 @@
 				$openSubChap = TRUE;
 			}
 
-			$contents = strstr($contents,$subChapEnd);
-			$contents = mb_substr($contents, strlen($subChapEnd));
+			$contents = mb_strstr($contents,$subChapEnd);
+			$contents = mb_substr($contents, mb_strlen($subChapEnd));
 		}
 
 
@@ -286,18 +292,18 @@
 		if ($iWwwLink > -1 && ($iWwwLink < $iLink || !$iLink) && ($iWwwLink < $iChap || !$iChap) && ($iWwwLink < $iSubChap || !$iSubChap))
 		{
 
-			$contents = strstr($contents, $wwwLinkStart);
-			$contents = mb_substr($contents, strlen($wwwLinkStart));
-			$wwwLink  = mb_substr($contents,0, strpos($contents,$wwwLinkEnd));
+			$contents = mb_strstr($contents, $wwwLinkStart);
+			$contents = mb_substr($contents, mb_strlen($wwwLinkStart));
+			$wwwLink  = mb_substr($contents,0, mb_strpos($contents,$wwwLinkEnd));
 			if ($wwwLink !="")
 			{
-				$wwwLinkURL = 'http:'.substr($wwwLink, 0, strpos($wwwLink, " "));
-				$wwwLinkName = substr($wwwLink, strpos($wwwLink, " "), strlen($wwwLink));
+				$wwwLinkURL = 'http:'.substr($wwwLink, 0, mb_strpos($wwwLink, " "));
+				$wwwLinkName = mb_substr($wwwLink, mb_strpos($wwwLink, " "), mb_strlen($wwwLink));
 				echo "<node TEXT=\"".cleanText($wwwLinkName)."\" WEBLINK=\"".$wwwLinkURL."\" STYLE=\"fork\">\n";
 				echo "</node>\n";
 			}
-			$contents = strstr($contents,$wwwLinkEnd);
-			$contents = substr($contents,strlen($wwwLinkEnd));
+			$contents = mb_strstr($contents,$wwwLinkEnd);
+			$contents = mb_substr($contents,mb_strlen($wwwLinkEnd));
 		}
 
 		//-----------------------------------------
@@ -305,13 +311,13 @@
 		//-----------------------------------------
 		if ($iLink > -1 && ($iLink < $iWwwLink || !$iWwwLink) && ($iLink < $iChap || !$iChap) && ($iLink < $iSubChap || !$iSubChap))
 		{
-			$contents = strstr($contents,$linkStart);
-			$tag = substr($contents, strlen($linkStart), strpos($contents, $linkEnd)-strlen($linkStart));
+			$contents = mb_strstr($contents,$linkStart);
+			$tag = mb_substr($contents, mb_strlen($linkStart), mb_strpos($contents, $linkEnd) - mb_strlen($linkStart));
 
 			//echo $tag;
 
 			// Keine Bilder etc...
-			if (strpos($tag, ':') == FALSE)
+			if (mb_strpos($tag, ':') == FALSE)
 			//$tag should be parsed seperately in future (applies for all nodes, end-node and chapter, to do the following things:
 			// - if | exists: left part = wikilink, right part = name in text
 			// - if : exists, decide, what to do... (add picture to mindmap?
@@ -321,9 +327,9 @@
 
 				if (in_array($tag, $link[0]) == FALSE)
 				{
-					if (strpos($tag, '|') != FALSE)
+					if (mb_strpos($tag, '|') != FALSE)
 					{
-						$wTag = substr($tag,0,strpos($tag,'|'));
+						$wTag = mb_substr($tag,0,mb_strpos($tag,'|'));
 						$link[1][$i] = str_replace(" ","_", $wTag);
 						$link[0][$i] = str_replace("|"," / ", $tag);
 					}
@@ -341,8 +347,8 @@
 					$i++;
 				}
 			}
-			$contents = strstr($contents,$linkEnd);
-			$contents = substr($contents,strlen($linkEnd));
+			$contents = mb_strstr($contents,$linkEnd);
+			$contents = mb_substr($contents,mb_strlen($linkEnd));
 		}
 	}
 
@@ -373,10 +379,10 @@
 
   function cleanText($text) {
 		$trans = array("=" => "", "[" => "", "]" => "", "{" => "", "}" => "", "_" => " ", "'" => "", "|" => "/",  "?" => "", "*" => "-", "\"" => "'");
-		$clean = strtr ($text, $trans);
+		$clean = mb_strtr ($text, $trans);
 		// Experimental remove a lot of reutrns (\n)
 		$transW = array( "\n" => "");
-		$clean = strtr ($clean, $transW );
+		$clean = mb_strtr ($clean, $transW );
 
 		$clean = MediaWikiZhConverter::convert($clean,"zh-cn","utf-8");
 		return explode(' ',trim($clean))[0];
@@ -384,7 +390,7 @@
 
   function cleanWikiLink($text) {
 		$trans = array("=" => "", "[" => "", "]" => "", "{" => "", "}" => "");
-		$clean = strtr ($text, $trans);
+		$clean = mb_strtr ($text, $trans);
 		return explode('_',$clean)[0];
 	}
 
@@ -400,8 +406,8 @@
 		$tttext = removeTags($text);
 		//echo '<br> TTTEXT: '.$tttext;
 		$i = $len;
-		if (strpos($text, $chapStart) >-1) {
-			$i = min(strpos($text, $chapStart), $len);
+		if (mb_strpos($text, $chapStart) >-1) {
+			$i = min(mb_strpos($text, $chapStart), $len);
 		}
 		$tttext = mb_substr($tttext, 0, $i);
 		$tttext = cleanText($tttext);
@@ -415,13 +421,13 @@
 	function removeClassInfo($text)
 	{
 		global $catStart, $catEnd;
-		$n = strpos($text, $catStart);
+		$n = mb_strpos($text, $catStart);
 		while ($n > -1) {
-			$o = strpos($text, $catStart,$n+1);
-			$c = strpos($text, $catEnd,$n+1);
+			$o = mb_strpos($text, $catStart,$n+1);
+			$c = mb_strpos($text, $catEnd,$n+1);
 			if ( $c > -1 && ($c < $o || !$o)) {
-				$text = substr_replace($text,"",$n,$c+1-$n);
-				$n = strpos($text, $catStart);
+				$text = mb_substr_replace($text,"",$n,$c+1-$n);
+				$n = mb_strpos($text, $catStart);
 			}
 			else {
 				$n = $o;
@@ -434,16 +440,16 @@
 	{
 		$cStart = "<";
 		$cEnd	= ">";
-		$n = strpos($text, $cStart);
+		$n = mb_strpos($text, $cStart);
 
 		while ($n > -1) {
 
-			$o = strpos($text, $cStart,$n+strlen($cStart));
-			$c = strpos($text, $cEnd,$n+strlen($cStart));
+			$o = mb_strpos($text, $cStart,$n + mb_strlen($cStart));
+			$c = mb_strpos($text, $cEnd,$n + mb_strlen($cStart));
 			if ( $c > -1 && ($c < $o || !$o)) {
 
-				$text = substr_replace($text,"",$n,$c+strlen($cEnd)-$n);
-				$n = strpos($text, $cStart);
+				$text = mb_substr_replace($text,"",$n,$c + mb_strlen($cEnd)-$n);
+				$n = mb_strpos($text, $cStart);
 			}
 			else {
 				$n = $o;
@@ -457,24 +463,24 @@
 	{
 		$linkStart = "[";
 		$linkEnd = "]";
-		$n = strpos($text, $linkStart);
+		$n = mb_strpos($text, $linkStart);
 		while ($n > -1) {
-			$o = strpos($text, $linkStart,$n+1);
-			$c = strpos($text, $linkEnd,$n+1);
+			$o = mb_strpos($text, $linkStart,$n+1);
+			$c = mb_strpos($text, $linkEnd,$n+1);
 			if ( $c > -1 && ($c < $o || !$o)) {
-				$tag = substr($text,$n+strlen($linkStart),$c-$n-strlen($linkEnd));
-				$s = strpos($tag,'|');
-				$spec = strpos($tag,':');
+				$tag = mb_substr($text,$n + mb_strlen($linkStart),$c-$n - mb_strlen($linkEnd));
+				$s = mb_strpos($tag,'|');
+				$spec = mb_strpos($tag,':');
 				if ($spec > -1) {
 					$tag = "";
 
 				}
 				elseif ($s > -1) {
-					$tag = substr($tag,$s+1,strlen($tag)- $s);
+					$tag = mb_substr($tag,$s+1,mb_strlen($tag)- $s);
 
 				}
-				$text = substr_replace($text,$tag,$n,$c+1-$n);
-				$n = strpos($text, $linkStart);
+				$text = mb_substr_replace($text,$tag,$n,$c+1-$n);
+				$n = mb_strpos($text, $linkStart);
 			}
 			else {
 				$n = $o;
@@ -483,4 +489,67 @@
 
 		return $text;
 	}
+
+	//extension
+	function mb_substr_replace($string, $replacement, $start, $length=NULL) {
+		if (is_array($string)) {
+			$num = count($string);
+			// $replacement
+			$replacement = is_array($replacement) ? array_slice($replacement, 0, $num) : array_pad(array($replacement), $num, $replacement);
+			// $start
+			if (is_array($start)) {
+				$start = array_slice($start, 0, $num);
+				foreach ($start as $key => $value)
+					$start[$key] = is_int($value) ? $value : 0;
+			}
+			else {
+				$start = array_pad(array($start), $num, $start);
+			}
+			// $length
+			if (!isset($length)) {
+				$length = array_fill(0, $num, 0);
+			}
+			elseif (is_array($length)) {
+				$length = array_slice($length, 0, $num);
+				foreach ($length as $key => $value)
+					$length[$key] = isset($value) ? (is_int($value) ? $value : $num) : 0;
+			}
+			else {
+				$length = array_pad(array($length), $num, $length);
+			}
+			// Recursive call
+			return array_map(__FUNCTION__, $string, $replacement, $start, $length);
+		}
+		preg_match_all('/./us', (string)$string, $smatches);
+		preg_match_all('/./us', (string)$replacement, $rmatches);
+		if ($length === NULL) $length = mb_strlen($string);
+		array_splice($smatches[0], $start, $length, $rmatches[0]);
+		return join($smatches[0]);
+	}
+
+	function mb_strtr($str,$map){
+		$out="";
+		$strLn=mb_strlen($str);
+		$maxKeyLn=1;
+		foreach($map as $key=>$val){
+			$keyLn=mb_strlen($key);
+			if($keyLn>$maxKeyLn){
+				$maxKeyLn=$keyLn;
+			}
+		}
+		for($offset=0; $offset<$strLn; ){
+			for($ln=$maxKeyLn; $ln>=1; $ln--){
+				$cmp=mb_substr($str,$offset,$ln);
+				if(isset($map[$cmp])){
+					$out.=$map[$cmp];
+					$offset+=$ln;
+					continue 2;
+				}
+			}
+			$out.=mb_substr($str,$offset,1);
+			$offset++;
+		}
+		return $out;
+	}
+
 ?>
